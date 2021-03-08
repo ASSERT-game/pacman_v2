@@ -26,5 +26,5 @@ Input is WASD, arrow keys, Xbox DPAD, Xbox Right Axis or Left (I made it easy to
 
 
 <br>
-<img height="700" src="https://github.com/ASSERT-game/pacman_v2/blob/master/resources/cookie.gif" />
+<img height="700" src="https://github.com/ASSERT-game/pacman_v2/blob/main/resources/cookie.gif" />
 <br>
