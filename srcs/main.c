@@ -33,6 +33,9 @@ void	pacman_initalize(t_pmContext *gContext)
 	init_input_mappers();
 
 	srand(0x9AC533D);
+
+	gContext->clone = SDL_FALSE;
+	gContext->pause = SDL_FALSE;
 }
 
 int	main(SDL_UNUSED int ac, SDL_UNUSED char *args[])
@@ -50,17 +53,35 @@ int	main(SDL_UNUSED int ac, SDL_UNUSED char *args[])
 		if (exit == SDL_TRUE)
 			break ;
 
+		if (g_GameInput.GameInput.button_GUIDE)
+		{
+			SDL_Log("Pressed");
+			if (gContext.pause == SDL_FALSE)
+			{
+				gContext.pause = SDL_TRUE;
+				SDL_Delay(140);
+			}
+			else
+			{
+				gContext.pause = SDL_FALSE;
+				SDL_Delay(140);
+			}
+		}
+
 		if (g_GameInput.GameInput.button_START)
 			pacman_initalize(&(gContext));
 
-		update_ghost(&(gContext), &(gContext.blinky));
-		update_ghost(&(gContext), &(gContext.pinky));
-		update_ghost(&(gContext), &(gContext.inky));
-		update_ghost(&(gContext), &(gContext.clyde));
+		if (gContext.pause == SDL_FALSE)
+		{
+			update_ghost(&(gContext), &(gContext.blinky));
+			update_ghost(&(gContext), &(gContext.pinky));
+			update_ghost(&(gContext), &(gContext.inky));
+			update_ghost(&(gContext), &(gContext.clyde));
 
-		update_player(&(gContext), &(gContext.player));
+			update_player(&(gContext), &(gContext.player));
 
-		update_map(&(gContext));
+			update_map(&(gContext));
+		}
 
 		if (exit != SDL_TRUE && SDLX_discrete_frames(&(gContext.ticks)) != EXIT_FAILURE)
 		{

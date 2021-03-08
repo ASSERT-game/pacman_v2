@@ -46,6 +46,9 @@ SDLX_iMap	*pacman_pad_map(size_t *size)
 		(SDLX_iMap){&BMAP(button_DPAD_DOWN),	1, SDL_CONTROLLER_BUTTON_DPAD_DOWN},
 
 		(SDLX_iMap){&BMAP(button_START),	1, SDL_CONTROLLER_BUTTON_START},
+		(SDLX_iMap){&BMAP(button_GUIDE),	1, SDL_CONTROLLER_BUTTON_BACK},
+
+		(SDLX_iMap){&BMAP(button_B),	1, SDL_CONTROLLER_BUTTON_B},
 	};
 
 	*size = sizeof(key_map) / sizeof(*key_map);
@@ -93,5 +96,6 @@ SDL_bool	input_entry(SDLX_GameInput *game_input)
 		pad = SDLX_AxisConvert(&(game_input->GameInput.rightaxis));
 		SDLX_toDPAD(game_input, pad);
 	}
+
 	return (exit);
 }

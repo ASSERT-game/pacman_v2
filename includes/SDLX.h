@@ -39,4 +39,6 @@ SDLX_Sprite		*SDLX_new_Sprite(SDLX_Sprite *dst);
 SDLX_Sprite		*SDLX_get_background(void);
 void			SDLX_set_background(SDLX_Sprite *src);
 
+SDL_bool		SDLX_poll(void);
+
 #endif

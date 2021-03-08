@@ -51,6 +51,14 @@ typedef struct	s_pacman
 	SDLX_direction	facing;
 
 	SDLX_Sprite		sprite;
+
+	int			x_i;
+	int			y_i;
+
+	SDLX_direction	facing_i;
+
+	SDLX_Sprite		sprite_i;
+
 	SDL_bool		dead;
 }				t_pacman;
 
@@ -76,5 +84,8 @@ typedef struct	s_pmContext
 	t_pacman			player;
 
 	SDLX_GameInput		game_in;
+
+	SDL_bool			clone;
+	SDL_bool			pause;
 
 }				t_pmContext;

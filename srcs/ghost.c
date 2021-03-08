@@ -248,6 +248,7 @@ void	update_ghost(t_pmContext *gContext, t_ghost *ghost)
 		{
 			gContext->player.dead = SDL_TRUE;
 			gContext->player.facing.val = SDLX_DIR_NONE;
+			gContext->player.facing_i.val = SDLX_DIR_NONE;
 			fetch_PacManSpriteInfo(&(gContext->player.sprite.sprite_data), SD_PACMAN_DEATH);
 			gContext->player.sprite.current = 0;
 		}

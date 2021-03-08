@@ -18,7 +18,7 @@
 # include "SDL2/SDL_log.h"
 
 // 1 second = 1000 ms.
-# define TICK_RATE (50)
+# define TICK_RATE (10)
 
 int		SDLX_discrete_frames(int *ticks);
 

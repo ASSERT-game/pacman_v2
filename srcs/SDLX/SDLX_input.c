@@ -66,3 +66,21 @@ void	SDLX_toDPAD(SDLX_GameInput *game_input, int set)
 	if (set == SDL_CONTROLLER_BUTTON_DPAD_LEFT)		game_input->GameInput.button_DPAD_LEFT	= 1;
 	if (set == SDL_CONTROLLER_BUTTON_DPAD_RIGHT)	game_input->GameInput.button_DPAD_RIGHT	= 1;
 }
+
+SDL_bool	SDLX_poll(void)
+{
+	SDL_bool	exit;
+	SDL_Event	event;
+
+	exit = SDL_FALSE;
+	while (SDL_PollEvent(&event) != 0)
+	{
+		if (event.type == SDL_QUIT)
+		{
+			exit = SDL_TRUE;
+			SDL_Log("Exit");
+			return (exit);
+		}
+	}
+	return (exit);
+}

@@ -41,6 +41,17 @@ void	update_map(t_pmContext *gContext)
 		gContext->fright_ticks = 70;
 	}
 
+	gContext->clone |= g_GameInput.GameInput.button_B;
+
+	p_x = gContext->player.x_i;
+	p_y = gContext->player.y_i;
+	if (gContext->map[p_y][p_x] == '.' && gContext->clone)
+	{
+		gContext->map[p_y][p_x] = ' ';
+		if (SDLX_XboxController_link(0) != NULL)
+			SDL_GameControllerRumble(SDLX_XboxController_link(0), 0x0100, 0xFF00, 30);
+	}
+
 	if (gContext->fright_ticks > 0)
 		gContext->fright_ticks--;
 }
