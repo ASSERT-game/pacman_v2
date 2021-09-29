@@ -4,7 +4,7 @@ Having created [this version](https://github.com/ASSERT-game/pacman), I knew the
 of the game I wanted to make.
 
 In this version I further develop a library that interacts with SDL that makes
-sme things easier. These things include working with textures, Xbox controller input,
+some things easier. These things include working with textures, Xbox controller input,
 frame rate and RenderQueues.
 
 As such this version of pacman supports Xbox controllers, I am using [this](https://github.com/360Controller/360Controller/releases)
