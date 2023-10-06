@@ -29,4 +29,4 @@ Input is WASD, arrow keys, Xbox DPAD, Xbox Right Axis or Left (I made it easy to
 <img height="700" src="https://github.com/ASSERT-game/pacman_v2/blob/main/resources/cookie.gif" />
 <br>
 
-You can play this game today right now, at no extra charge! Visit https://mrcolour.github.io/pacman/
+You can play this game today right now, at no extra charge! Visit https://mrcolour.github.io//#/pacman
